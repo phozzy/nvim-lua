@@ -63,6 +63,13 @@ return packer.startup(function(use)
     config = safe_require_plugin_config("tokyonight"),
   }
 
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = safe_require_plugin_config("treesitter"),
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
