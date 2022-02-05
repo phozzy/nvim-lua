@@ -66,6 +66,7 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
+    opt = false,
     run = ":TSUpdate",
     config = safe_require_plugin_config("treesitter"),
   }
