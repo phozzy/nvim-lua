@@ -27,6 +27,14 @@ local options = {
   number = true,
   -- show hidden symbols
   list = true,
+  -- convert tabs to spaces
+  expandtab = true,
+  -- the number of spaces inserted for each indentation
+  shiftwidth = 2,
+  -- insert 2 spaces for a tab
+  tabstop = 2,
+  -- make indenting smarter again
+  smartindent = true,
 }
 for k, v in pairs(options) do
   vim.opt[k] = v
