@@ -48,7 +48,6 @@ local function safe_require_plugin_config(name)
   end
 end
 
-
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
