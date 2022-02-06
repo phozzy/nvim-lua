@@ -80,6 +80,28 @@ return packer.startup(function(use)
     config = safe_require_plugin_config("devicons"),
   }
 
+  -- cmp plugins
+  -- The completion plugin
+  use {
+    "hrsh7th/nvim-cmp",
+    opt = false,
+    config = safe_require_plugin_config("cmp"),
+  }
+  -- buffer completions
+  use "hrsh7th/cmp-buffer"
+  -- path completions
+  use "hrsh7th/cmp-path"
+  -- cmdline completions
+  use "hrsh7th/cmp-cmdline"
+  -- snippet completions
+  use "saadparwaiz1/cmp_luasnip"
+
+  -- snippets
+  --snippet engine
+  use "L3MON4D3/LuaSnip"
+  -- a bunch of snippets to use
+  use "rafamadriz/friendly-snippets"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
