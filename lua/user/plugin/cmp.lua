@@ -112,6 +112,8 @@ cmp.setup({
       return vim_item
     end,
   },
+  documentation = {
+  },
   sources = cmp.config.sources({
     -- { name = 'nvim_lsp' },
     -- { name = 'vsnip' }, -- For vsnip users.
@@ -128,7 +130,7 @@ cmp.setup({
 cmp.setup.cmdline('/', {
   sources = {
     { name = 'buffer' }
-  }
+  },
 })
 
 -- Use cmdline & path source for ':'
@@ -138,7 +140,7 @@ cmp.setup.cmdline(':', {
     { name = 'path' }
   }, {
     { name = 'cmdline' }
-  })
+  }),
 })
 
 ---- Setup lspconfig.
