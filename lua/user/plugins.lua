@@ -86,6 +86,13 @@ return packer.startup(function(use)
     "hrsh7th/nvim-cmp",
     opt = false,
     config = safe_require_plugin_config("cmp"),
+    requires = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "saadparwaiz1/cmp_luasnip",
+      "L3MON4D3/LuaSnip",
+    }
   }
   -- buffer completions
   use "hrsh7th/cmp-buffer"
