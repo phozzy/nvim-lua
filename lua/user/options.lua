@@ -35,6 +35,8 @@ local options = {
   tabstop = 2,
   -- make indenting smarter again
   smartindent = true,
+  -- allow the mouse to be used in neovim
+  mouse = "a",
 }
 for k, v in pairs(options) do
   vim.opt[k] = v
