@@ -59,31 +59,27 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
 
   -- Colorschemes
-  use {
-    "folke/tokyonight.nvim",
+  use { "folke/tokyonight.nvim",
     opt = false,
     config = safe_require_plugin_config("tokyonight"),
   }
 
   -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
+  use { "nvim-treesitter/nvim-treesitter",
     opt = false,
     run = ":TSUpdate",
     config = safe_require_plugin_config("treesitter"),
   }
 
   -- Devicos
-  use {
-    "kyazdani42/nvim-web-devicons",
+  use { "kyazdani42/nvim-web-devicons",
      opt = false,
     config = safe_require_plugin_config("devicons"),
   }
 
   -- cmp plugins
   -- The completion plugin
-  use {
-    "hrsh7th/nvim-cmp",
+  use { "hrsh7th/nvim-cmp",
     opt = false,
     config = safe_require_plugin_config("cmp"),
     requires = {
@@ -105,8 +101,7 @@ return packer.startup(function(use)
   -- snippet completions
   use "saadparwaiz1/cmp_luasnip"
   -- lsp completion
-  use {
-    "hrsh7th/cmp-nvim-lsp",
+  use { "hrsh7th/cmp-nvim-lsp",
     opt = false,
     requires = {
       "neovim/nvim-lspconfig",
@@ -125,8 +120,7 @@ return packer.startup(function(use)
   -- enable LSP
   use "neovim/nvim-lspconfig"
   -- simple to use language server installer
-  use {
-    "williamboman/nvim-lsp-installer",
+  use { "williamboman/nvim-lsp-installer",
     opt = false,
     requires = {
       "neovim/nvim-lspconfig",
