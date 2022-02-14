@@ -117,8 +117,11 @@ cmp.setup({
   documentation = {
   },
   sources = cmp.config.sources({
+  }, {
     { name = 'nvim_lsp' },
+  }, {
     { name = 'nvim_lua' },
+  }, {
     { name = 'luasnip' }, -- For luasnip users.
   }, {
     { name = 'buffer' },
