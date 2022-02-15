@@ -128,6 +128,7 @@ return packer.startup(function(use)
     requires = {
       "neovim/nvim-lspconfig",
     },
+    config = safe_require_plugin_config("lsp-installer"),
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
