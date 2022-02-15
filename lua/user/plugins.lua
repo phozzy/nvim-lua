@@ -70,6 +70,8 @@ return packer.startup(function(use)
     run = ":TSUpdate",
     config = safe_require_plugin_config("treesitter"),
   }
+  -- Check for treesitter modules and plugins here:
+  -- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Extra-modules-and-plugins
   use { "p00f/nvim-ts-rainbow",
     opt = false,
     requires = "nvim-treesitter/nvim-treesitter",
