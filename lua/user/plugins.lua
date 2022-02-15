@@ -73,7 +73,7 @@ return packer.startup(function(use)
 
   -- Devicos
   use { "kyazdani42/nvim-web-devicons",
-     opt = false,
+    opt = false,
     config = safe_require_plugin_config("devicons"),
   }
 
