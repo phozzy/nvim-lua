@@ -70,6 +70,10 @@ return packer.startup(function(use)
     run = ":TSUpdate",
     config = safe_require_plugin_config("treesitter"),
   }
+  use { "p00f/nvim-ts-rainbow",
+    opt = false,
+    requires = "nvim-treesitter/nvim-treesitter",
+  }
 
   -- Devicos
   use { "kyazdani42/nvim-web-devicons",
