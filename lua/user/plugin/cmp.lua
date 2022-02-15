@@ -113,6 +113,10 @@ cmp.setup({
   },
   documentation = {
   },
+  confirm_opts = {
+    behavior = cmp.ConfirmBehavior.Replace,
+    select = false,
+  },
   sources = cmp.config.sources({
   }, {
     { name = 'nvim_lsp' },
