@@ -40,7 +40,7 @@ packer.init {
 
 -- define a function to load plugin's config
 local function safe_require_plugin_config(name)
-  local ok_3f, val_or_err = pcall(require, ("lua.user.plugin." .. name))
+  local ok_3f, val_or_err = pcall(require, ("user.plugin." .. name))
   if not ok_3f then
     return print(("dotfiles error: " .. val_or_err))
   else
