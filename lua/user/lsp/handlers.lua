@@ -102,6 +102,9 @@ local function lsp_keymaps(bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ca', [[
     <cmd>lua vim.lsp.buf.code_action()<CR>
   ]], opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>so', [[
+    <cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>
+  ]], opts)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
