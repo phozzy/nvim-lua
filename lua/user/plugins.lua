@@ -136,6 +136,9 @@ return packer.startup(function(use)
     },
     config = safe_require_plugin_config("lsp-installer"),
   }
+  -- language server settings defined in json for
+  -- TODO find a way to configure it
+  use "tamago324/nlsp-settings.nvim"
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim",
