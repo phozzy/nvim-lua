@@ -6,6 +6,7 @@ end
 -- local actions = require "telescope.actions"
 
 telescope.setup{}
+telescope.load_extension "file_browser"
 
 --Add leader shortcuts
 local opts = { noremap = true, silent = true }
@@ -35,4 +36,7 @@ vim.api.nvim_set_keymap('n', '<leader>so', [[
 ]], opts)
 vim.api.nvim_set_keymap('n', '<leader>?', [[
   <cmd>lua require('telescope.builtin').oldfiles()<CR>
+]], opts)
+vim.api.nvim_set_keymap('n', '<leader>fb', [[
+  :Telescope file_browser
 ]], opts)
