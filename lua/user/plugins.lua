@@ -137,6 +137,13 @@ return packer.startup(function(use)
     config = safe_require_plugin_config("lsp-installer"),
   }
 
+  -- Telescope
+  use { "nvim-telescope/telescope.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = safe_require_plugin_config("telescope"),
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
