@@ -57,6 +57,11 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"
   -- Useful lua functions used by lots of plugins
   use "nvim-lua/plenary.nvim"
+  -- Easily comment stuff
+  use { "numToStr/Comment.nvim",
+    opt = false,
+    config = safe_require_plugin_config("comment"),
+  }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim",
@@ -73,6 +78,10 @@ return packer.startup(function(use)
   -- Check for treesitter modules and plugins here:
   -- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Extra-modules-and-plugins
   use { "p00f/nvim-ts-rainbow",
+    opt = false,
+    requires = "nvim-treesitter/nvim-treesitter",
+  }
+  use { "JoosepAlviste/nvim-ts-context-commentstring",
     opt = false,
     requires = "nvim-treesitter/nvim-treesitter",
   }
