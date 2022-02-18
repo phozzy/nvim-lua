@@ -122,6 +122,16 @@ return packer.startup(function(use)
   -- a bunch of snippets to use
   use "rafamadriz/friendly-snippets"
 
+  -- Autopairs
+  use { "windwp/nvim-autopairs",
+    opt = false,
+    requires = {
+      "hrsh7th/nvim-cmp",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = safe_require_plugin_config("autopairs"),
+  }
+
   -- LSP
   -- enable LSP
   use { "neovim/nvim-lspconfig",
