@@ -169,12 +169,21 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope-file-browser.nvim"
 
   -- Git
-  use {"TimUntersberger/neogit",
+  -- neogit
+  use { "TimUntersberger/neogit",
     opt = false,
     requires = {
       "nvim-lua/plenary.nvim",
     },
     config = safe_require_plugin_config("neogit"),
+  }
+  -- gitsign
+  use { "lewis6991/gitsigns.nvim",
+    opt = false,
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = safe_require_plugin_config("gitsigns"),
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
