@@ -8,35 +8,61 @@ end
 telescope.setup{}
 telescope.load_extension "file_browser"
 
---Add leader shortcuts
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap('n', '<leader><space>', [[
-  <cmd>lua require('telescope.builtin').buffers()<CR>
-]], opts)
-vim.api.nvim_set_keymap('n', '<leader>sf', [[
-  <cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>
-]], opts)
-vim.api.nvim_set_keymap('n', '<leader>sb', [[
-  <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>
-]], opts)
-vim.api.nvim_set_keymap('n', '<leader>sh', [[
-  <cmd>lua require('telescope.builtin').help_tags()<CR>
-]], opts)
-vim.api.nvim_set_keymap('n', '<leader>st', [[
-  <cmd>lua require('telescope.builtin').tags()<CR>
-]], opts)
-vim.api.nvim_set_keymap('n', '<leader>sd', [[
-  <cmd>lua require('telescope.builtin').grep_string()<CR>
-]], opts)
-vim.api.nvim_set_keymap('n', '<leader>sp', [[
-  <cmd>lua require('telescope.builtin').live_grep()<CR>
-]], opts)
-vim.api.nvim_set_keymap('n', '<leader>so', [[
-  <cmd>lua require('telescope.builtin').tags{ only_current_buffer = true }<CR>
-]], opts)
-vim.api.nvim_set_keymap('n', '<leader>?', [[
-  <cmd>lua require('telescope.builtin').oldfiles()<CR>
-]], opts)
-vim.api.nvim_set_keymap('n', '<leader>fb', [[
-  :Telescope file_browser
-]], opts)
+local function map(mode, lhs, rhs, opts)
+    opts = vim.tbl_extend(
+      'force',
+      {noremap = true, silent = true},
+      opts or {}
+    )
+    vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
+end
+map(
+  'n',
+  '<leader><space>',
+  '<cmd>lua require("telescope.builtin").buffers()<CR>'
+)
+map(
+  'n',
+  '<leader>sf',
+  '<cmd>lua require("telescope.builtin").find_files({previewer = false})<CR>'
+)
+map(
+  'n',
+  '<leader>sb',
+  '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>'
+)
+map(
+  'n',
+  '<leader>sh',
+  '<cmd>lua require("telescope.builtin").help_tags()<CR>'
+)
+map(
+  'n',
+  '<leader>st',
+  '<cmd>lua require("telescope.builtin").tags()<CR>'
+)
+map(
+  'n',
+  '<leader>sd',
+  '<cmd>lua require("telescope.builtin").grep_string()<CR>'
+)
+map(
+  'n',
+  '<leader>sp',
+  '<cmd>lua require("telescope.builtin").live_grep()<CR>'
+)
+map(
+  'n',
+  '<leader>so',
+  '<cmd>lua require("telescope.builtin").tags{ only_current_buffer = true }<CR>'
+)
+map(
+  'n',
+  '<leader>?',
+  '<cmd>lua require("telescope.builtin").oldfiles()<CR>'
+)
+map(
+  'n',
+  '<leader>fb',
+  ':Telescope file_browser<CR>'
+)
