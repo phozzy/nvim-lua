@@ -91,6 +91,14 @@ return packer.startup(function(use)
     opt = false,
     config = safe_require_plugin_config("devicons"),
   }
+  -- File browser
+  use { "kyazdani42/nvim-tree.lua",
+    opt =false,
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+    },
+    config = safe_require_plugin_config("nvim-tree"),
+  }
 
   -- cmp plugins
   -- The completion plugin
