@@ -57,6 +57,8 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"
   -- Useful lua functions used by lots of plugins
   use "nvim-lua/plenary.nvim"
+  -- Add :Bdelelet command
+  use "moll/vim-bbye"
   -- Easily comment stuff
   use { "numToStr/Comment.nvim",
     opt = false,
