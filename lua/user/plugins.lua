@@ -99,6 +99,14 @@ return packer.startup(function(use)
     },
     config = safe_require_plugin_config("nvim-tree"),
   }
+  -- Buffer line
+  use { "akinsho/bufferline.nvim",
+    opt =false,
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+    },
+    config = safe_require_plugin_config("buffer-line"),
+  }
 
   -- cmp plugins
   -- The completion plugin
