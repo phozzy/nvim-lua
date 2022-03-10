@@ -37,6 +37,8 @@ local options = {
   smartindent = true,
   -- allow the mouse to be used in neovim
   mouse = "a",
+  -- set term gui colors (most terminals support this)
+  termguicolors = true,
 }
 for k, v in pairs(options) do
   vim.opt[k] = v
