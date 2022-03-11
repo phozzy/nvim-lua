@@ -176,6 +176,11 @@ return packer.startup(function(use)
   -- language server settings defined in json for
   -- TODO find a way to configure it
   use "tamago324/nlsp-settings.nvim"
+  -- for formatters and linters
+  use { "jose-elias-alvarez/null-ls.nvim",
+    opt = false,
+    config = safe_require_plugin_config("null-ls"),
+  }
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim",
