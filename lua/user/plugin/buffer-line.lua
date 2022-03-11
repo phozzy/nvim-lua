@@ -13,8 +13,11 @@ bufferline.setup{
     offsets = {
       {
         filetype = "NvimTree",
-        text = "",
-        padding = 1,
+        text = function ()
+          return vim.fn.getcwd()
+        end,
+        highlight = "Directory",
+        text_align = "left",
       }
     },
     -- Allways show tab indicator
