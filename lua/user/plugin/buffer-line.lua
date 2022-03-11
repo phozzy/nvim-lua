@@ -22,5 +22,34 @@ bufferline.setup{
     },
     -- Allways show tab indicator
     show_tab_indicators = true,
+    -- Add numbers to buffers
+    numbers = "ordinal",
   }
 }
+
+local function map(mode, lhs, rhs, opts)
+    opts = vim.tbl_extend(
+      'force',
+      {noremap = true, silent = true},
+      opts or {}
+    )
+    vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
+end
+map(
+  'n',
+  'b]',
+  ':BufferLineCycleNext<CR>'
+)
+map(
+  'n',
+  'b[',
+  ':BufferLineCyclePrev<CR>'
+)
+for i = 1, 9, 1 do
+  -- map buffers to numbers
+  map(
+    "n",
+    "<leader>" .. i,
+    "<cmd>BufferLineGoToBuffer " .. i .. "<CR>"
+  )
+end
