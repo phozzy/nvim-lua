@@ -24,6 +24,8 @@ bufferline.setup{
     show_tab_indicators = true,
     -- Add numbers to buffers
     numbers = "ordinal",
+    -- Allways show bufferline
+    always_show_bufferline = true,
   }
 }
 
