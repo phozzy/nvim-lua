@@ -64,6 +64,11 @@ return packer.startup(function(use)
     opt = false,
     config = safe_require_plugin_config("comment"),
   }
+  -- Easy to use terminal
+  use { "akinsho/toggleterm.nvim",
+    opt =false,
+    config = safe_require_plugin_config("toggleterm"),
+  }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim",
