@@ -109,6 +109,14 @@ return packer.startup(function(use)
     },
     config = safe_require_plugin_config("buffer-line"),
   }
+  -- Status line
+  use { "nvim-lualine/lualine.nvim",
+    opt = false,
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+    },
+    safe_require_plugin_config("lualine"),
+  }
 
   -- cmp plugins
   -- The completion plugin
