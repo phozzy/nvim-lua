@@ -203,6 +203,14 @@ return packer.startup(function(use)
     config = safe_require_plugin_config("telescope"),
   }
   use "nvim-telescope/telescope-file-browser.nvim"
+  -- Mange projects
+  use { "ahmedkhalf/project.nvim",
+    opt =false,
+    requires = {
+      "nvim-telescope/telescope.nvim",
+    },
+    config = safe_require_plugin_config("project")
+  }
 
   -- Git
   -- neogit
