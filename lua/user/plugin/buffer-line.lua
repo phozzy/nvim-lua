@@ -39,12 +39,12 @@ local function map(mode, lhs, rhs, opts)
 end
 map(
   'n',
-  'b]',
+  ']b',
   ':BufferLineCycleNext<CR>'
 )
 map(
   'n',
-  'b[',
+  '[b',
   ':BufferLineCyclePrev<CR>'
 )
 for i = 1, 9, 1 do

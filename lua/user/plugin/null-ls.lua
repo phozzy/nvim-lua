@@ -8,4 +8,17 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
-null_ls.setup{}
+null_ls.setup{
+  sources = {
+    -- formatting
+    formatting.stylua,
+    formatting.rubocop,
+    formatting.terraform_fmt,
+    -- diagnostics
+    diagnostics.actionlint,
+    diagnostics.misspell,
+    diagnostics.proselint,
+    diagnostics.rubocop,
+    diagnostics.shellcheck,
+  }
+}

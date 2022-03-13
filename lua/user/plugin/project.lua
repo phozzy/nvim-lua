@@ -1,3 +1,6 @@
+-- Update cwd for the current project
+vim.g.nvim_tree_respect_buf_cwd = 1
+
 local status_ok, project = pcall(require, "project_nvim")
 if not status_ok then
   return

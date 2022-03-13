@@ -63,11 +63,18 @@ return packer.startup(function(use)
   use { "numToStr/Comment.nvim",
     opt = false,
     config = safe_require_plugin_config("comment"),
+    requires = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    }
   }
   -- Easy to use terminal
   use { "akinsho/toggleterm.nvim",
-    opt =false,
+    opt = false,
     config = safe_require_plugin_config("toggleterm"),
+  }
+  use { "lewis6991/impatient.nvim",
+    opt = false,
+    config = safe_require_plugin_config("impatient"),
   }
 
   -- Colorschemes
@@ -81,18 +88,32 @@ return packer.startup(function(use)
     opt = false,
     run = ":TSUpdate",
     config = safe_require_plugin_config("treesitter"),
+    requires = {
+      "p00f/nvim-ts-rainbow",
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    }
   }
   -- Check for treesitter modules and plugins here:
   -- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Extra-modules-and-plugins
   use { "p00f/nvim-ts-rainbow",
     opt = false,
-    requires = "nvim-treesitter/nvim-treesitter",
   }
   use { "JoosepAlviste/nvim-ts-context-commentstring",
     opt = false,
-    requires = "nvim-treesitter/nvim-treesitter",
+  }
+  use { "nvim-treesitter/nvim-treesitter-textobjects",
+    opt = false,
   }
 
+  -- Indentline
+  use { "lukas-reineke/indent-blankline.nvim",
+    opt = false,
+    requires = {
+      "nvim-treesitter/nvim-treesitter"
+    },
+    config = safe_require_plugin_config("indentline")
+  }
   -- Devicos
   use { "kyazdani42/nvim-web-devicons",
     opt = false,
@@ -121,6 +142,19 @@ return packer.startup(function(use)
       "kyazdani42/nvim-web-devicons",
     },
     safe_require_plugin_config("lualine"),
+  }
+  -- Dashboard
+  use { "goolord/alpha-nvim",
+    opt = false,
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+    },
+    safe_require_plugin_config("alpha"),
+  }
+  -- Whichkey - show poosible keybindings
+  use { "folke/which-key.nvim",
+    opt =false,
+    safe_require_plugin_config("whichkey"),
   }
 
   -- cmp plugins
@@ -193,6 +227,50 @@ return packer.startup(function(use)
   use { "jose-elias-alvarez/null-ls.nvim",
     opt = false,
     config = safe_require_plugin_config("null-ls"),
+  }
+
+  -- Debug Adapter Protocol
+  use { "mfussenegger/nvim-dap",
+    opt = false,
+    config = safe_require_plugin_config("dap"),
+  }
+  use { "rcarriga/nvim-dap-ui",
+    opt = false,
+    requires = {
+      "mfussenegger/nvim-dap",
+    },
+    config = safe_require_plugin_config("dap-ui"),
+  }
+  use { "leoluz/nvim-dap-go",
+    opt = false,
+    requires = {
+      "mfussenegger/nvim-dap",
+    },
+    config = safe_require_plugin_config("dap-go"),
+  }
+  use { "jbyuki/one-small-step-for-vimkind",
+    opt = false,
+    requires = {
+      "mfussenegger/nvim-dap",
+    },
+    config = safe_require_plugin_config("dap-lua"),
+  }
+
+  -- language tools
+  -- Rust
+  use { "simrat39/rust-tools.nvim",
+    opt = false,
+    requires = {
+      "neovim/nvim-lspconfig",
+      "nvim-lua/plenary.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    config = safe_require_plugin_config("rust-tools"),
+  }
+  -- Go language
+  use { "ray-x/go.nvim",
+    opt = false,
+    config = safe_require_plugin_config("go-tools"),
   }
 
   -- Telescope

@@ -3,7 +3,11 @@ if not status_ok then
   return
 end
 
-nvim_tree.setup {}
+nvim_tree.setup {
+  git = {
+    ignore = false,
+  },
+}
 
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<leader>ft',
