@@ -207,22 +207,32 @@ return packer.startup(function(use)
   }
 
   -- LSP
+  -- language server installer
+  use { "williamboman/mason.nvim",
+    opt = false,
+    config = safe_require_plugin_config("mason"),
+  }
+  -- bridge between mason and lspconfig
+  use { "williamboman/mason-lspconfig.nvim",
+    opt = false,
+    config = safe_require_plugin_config("mason-lspconfig"),
+  }
   -- enable LSP
   use { "neovim/nvim-lspconfig",
     opt = false,
     config = safe_require_plugin_config("lspconfig"),
   }
-  -- simple to use language server installer
-  use { "williamboman/nvim-lsp-installer",
-    opt = false,
-    requires = {
-      "neovim/nvim-lspconfig",
-    },
-    config = safe_require_plugin_config("lsp-installer"),
-  }
-  -- language server settings defined in json for
-  -- TODO find a way to configure it
-  use "tamago324/nlsp-settings.nvim"
+  --[[ -- simple to use language server installer ]]
+  --[[ use { "williamboman/nvim-lsp-installer", ]]
+  --[[   opt = false, ]]
+  --[[   requires = { ]]
+  --[[     "neovim/nvim-lspconfig", ]]
+  --[[   }, ]]
+  --[[   config = safe_require_plugin_config("lsp-installer"), ]]
+  --[[ } ]]
+  --[[ -- language server settings defined in json for ]]
+  --[[ -- TODO find a way to configure it ]]
+  --[[ use "tamago324/nlsp-settings.nvim" ]]
   -- for formatters and linters
   use { "jose-elias-alvarez/null-ls.nvim",
     opt = false,
