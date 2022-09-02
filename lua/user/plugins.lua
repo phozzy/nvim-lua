@@ -215,11 +215,17 @@ return packer.startup(function(use)
   -- bridge between mason and lspconfig
   use { "williamboman/mason-lspconfig.nvim",
     opt = false,
+    requires = {
+      "williamboman/mason.nvim",
+    },
     config = safe_require_plugin_config("mason-lspconfig"),
   }
   -- enable LSP
   use { "neovim/nvim-lspconfig",
     opt = false,
+    requires = {
+      "williamboman/mason-lspconfig.nvim",
+    },
     config = safe_require_plugin_config("lspconfig"),
   }
   --[[ -- simple to use language server installer ]]
