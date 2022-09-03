@@ -181,12 +181,7 @@ return packer.startup(function(use)
   -- snippet completions
   use "saadparwaiz1/cmp_luasnip"
   -- lsp completion
-  use { "hrsh7th/cmp-nvim-lsp",
-    opt = false,
-    requires = {
-      "neovim/nvim-lspconfig",
-    },
-  }
+  use "hrsh7th/cmp-nvim-lsp"
   -- source for neovim Lua API
   use "hrsh7th/cmp-nvim-lua"
 
