@@ -207,6 +207,14 @@ return packer.startup(function(use)
     opt = false,
     config = safe_require_plugin_config("mason"),
   }
+  -- Automatically install and update tools via Mason
+  use { "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opt = false,
+    requires = {
+      "williamboman/mason.nvim",
+    },
+    config = safe_require_plugin_config("mason-tool-installer"),
+  }
   -- bridge between mason and lspconfig
   use { "williamboman/mason-lspconfig.nvim",
     opt = false,
