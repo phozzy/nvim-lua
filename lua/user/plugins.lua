@@ -225,6 +225,7 @@ return packer.startup(function(use)
     opt = false,
     requires = {
       "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/nvim-cmp",
     },
     config = safe_require_plugin_config("lsp"),
   }

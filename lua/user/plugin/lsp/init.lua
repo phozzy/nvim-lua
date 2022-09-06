@@ -47,7 +47,30 @@ end
 
 mason_lspconfig.setup()
 
-local status_ok, _ = pcall(require, "lspconfig")
+local status_ok, lspconfig = pcall(require, "lspconfig")
 if not status_ok then
 	return
+end
+
+local servers = mason_lspconfig.get_installed_servers()
+
+local opts = {}
+
+for _, server in ipairs(servers) do
+  opts = {
+    on_attach = require("user.plugin.lsp.handlers").on_attach,
+    capabilities = require("user.plugin.lsp.handlers").capabilities,
+  }
+
+  if server == "sumneko_lua" then
+    local sumneko_opts = require "user.plugin.lsp.settings.sumneko_lua"
+    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+  end
+
+  if server == "pyright" then
+    local pyright_opts = require "user.plugin.lsp.settings.pyright"
+    opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+  end
+
+  lspconfig[server].setup(opts)
 end
