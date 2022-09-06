@@ -181,12 +181,7 @@ return packer.startup(function(use)
   -- snippet completions
   use "saadparwaiz1/cmp_luasnip"
   -- lsp completion
-  use { "hrsh7th/cmp-nvim-lsp",
-    opt = false,
-    requires = {
-      "neovim/nvim-lspconfig",
-    },
-  }
+  use "hrsh7th/cmp-nvim-lsp"
   -- source for neovim Lua API
   use "hrsh7th/cmp-nvim-lua"
 
@@ -207,22 +202,33 @@ return packer.startup(function(use)
   }
 
   -- LSP
+  -- language server installer
+  use { "williamboman/mason.nvim",
+    opt = false,
+  }
+  -- Automatically install and update tools via Mason
+  use { "WhoIsSethDaniel/mason-tool-installer.nvim",
+    opt = false,
+    requires = {
+      "williamboman/mason.nvim",
+    },
+  }
+  -- bridge between mason and lspconfig
+  use { "williamboman/mason-lspconfig.nvim",
+    opt = false,
+    requires = {
+      "WhoIsSethDaniel/mason-tool-installer",
+    },
+  }
   -- enable LSP
   use { "neovim/nvim-lspconfig",
     opt = false,
-    config = safe_require_plugin_config("lspconfig"),
-  }
-  -- simple to use language server installer
-  use { "williamboman/nvim-lsp-installer",
-    opt = false,
     requires = {
-      "neovim/nvim-lspconfig",
+      "williamboman/mason-lspconfig.nvim",
+      "hrsh7th/nvim-cmp",
     },
-    config = safe_require_plugin_config("lsp-installer"),
+    config = safe_require_plugin_config("lsp"),
   }
-  -- language server settings defined in json for
-  -- TODO find a way to configure it
-  use "tamago324/nlsp-settings.nvim"
   -- for formatters and linters
   use { "jose-elias-alvarez/null-ls.nvim",
     opt = false,
