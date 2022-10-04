@@ -53,8 +53,6 @@ return packer.startup(function(use)
   -- My plugins here
   -- Have packer manage itself
   use "wbthomason/packer.nvim"
-  -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/popup.nvim"
   -- Useful lua functions used by lots of plugins
   use "nvim-lua/plenary.nvim"
   -- Add :Bdelelet command
