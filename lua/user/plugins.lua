@@ -149,6 +149,8 @@ return packer.startup(function(use)
     },
     safe_require_plugin_config("alpha"),
   }
+  -- Highlight the same words
+  use "RRethy/vim-illuminate"
   -- Whichkey - show poosible keybindings
   use { "folke/which-key.nvim",
     opt =false,
