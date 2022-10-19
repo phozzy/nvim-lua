@@ -314,6 +314,12 @@ return packer.startup(function(use)
     config = safe_require_plugin_config("gitsigns"),
   }
 
+  -- External integrations
+  -- Firenvim
+  use { "glacambre/firenvim",
+    run = function() vim.fn['firenvim#install'](0) end,
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
